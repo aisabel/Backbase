@@ -13,8 +13,8 @@ import cucumber.api.java.en.Then;
 public class deleteRegister {
 	public static WebDriver driver;
 	
-	@Given("^user in homepage$")
-	public void userOnHomePage() throws Throwable {
+	@Given("^user is in computer homepage$")
+	public void userInHPage() throws Throwable {
         driver = new FirefoxDriver();
         driver.manage().deleteAllCookies();/* Command delete all coockies when browser is opened*/
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -24,25 +24,28 @@ public class deleteRegister {
 	@When("^I fill in search field with \"(.*)\"$")
 	public void searchFieldr(String NameSearch) throws Throwable {
 		driver.findElement(By.id("searchbox")).sendKeys(NameSearch);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@And("^I click filter button$")
 	public void filterButtonr() throws Throwable {
 		driver.findElement(By.id("searchsubmit")).click();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@And("^I click \"(.*)\" link to delete$")
 	public void clickDelLink(String Name) throws Throwable {
 		driver.findElement(By.linkText("Erikson v2")).click();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);	
 	}
 	
 	@Then("^I click delete this computer button$")
 	public void deleteThisComputer() throws Throwable {
 		driver.findElement(By.cssSelector("input[class='btn danger']")).click();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.close();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
+
+	@Then("^I verify delete message is displayed$")
+	public void verifyDeleteMessage() throws Throwable {
+		driver.findElement(By.cssSelector("div[class='alert-message warning']")).getText();
+		driver.quit();
+	}
+	
 }
