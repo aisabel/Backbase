@@ -26,39 +26,37 @@ public class createNewRegister {
 	@When("^I click Add a new computer button$")
 	public void add() throws Throwable {
 		driver.findElement(By.linkText("Add a new computer")).click();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@And("^I fill in computer name field with \"(.*)\"$")
 	public void computerName(String Name) throws Throwable {
 		driver.findElement(By.name("name")).sendKeys(Name);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@And("^I fill in introduced date field with \"(.*)\"$")
 	public void introducedDate(String IntroducedDate) throws Throwable {
 		driver.findElement(By.id("introduced")).sendKeys(IntroducedDate);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@And("^I fill in discontinued date field with \"(.*)\"$")
 	public void discontinuedDate(String DiscontinuedDate) throws Throwable {
 		driver.findElement(By.id("discontinued")).sendKeys(DiscontinuedDate);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@Then("^I select \"(.*)\" option$")
 	public void selectCompany(String company) throws Throwable {
 		Select dropdown=new Select(driver.findElement(By.id("company")));
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		dropdown.selectByValue("16");
 	}
 	
 	@Then("^I click create this computer button$")
 	public void createThisComputer() throws Throwable {
 		driver.findElement(By.cssSelector("input[class='btn primary']")).click();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
+	
+	@Then("^I verify success message is displayed$")
+	public void verifySuccessMessage() throws Throwable {
+		driver.findElement(By.cssSelector("div[class='alert-message warning']")).getText();
 		driver.quit();
 	}
-
 }
