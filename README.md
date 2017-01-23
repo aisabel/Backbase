@@ -11,6 +11,7 @@ Note: It's also included junit jar file, user is able to run project as JUnit te
 
 
 Frameworks description:
+------
 
 *Selenium is an umbrella project encapsulating a variety of tools and libraries enabling web browser automation. Selenium specifically provides infrastructure for the W3C WebDriver specification — a platform and language-neutral coding interface compatible with all major web browsers.
  
