@@ -12,6 +12,13 @@ Note: It's also included junit jar file, user is able to run project as JUnit te
 
 Frameworks description:
 
+*Selenium is an umbrella project encapsulating a variety of tools and libraries enabling web browser automation. Selenium specifically provides infrastructure for the W3C WebDriver specification — a platform and language-neutral coding interface compatible with all major web browsers.
+ 
+ Selenium webdriver  reference page: http://docs.seleniumhq.org/projects/webdriver/
+ 
+ 
+
+
 *Cucumber is a tool that supports Behaviour-Driven Development (BDD) - a software development process that aims to enhance software quality and reduce maintenance costs.
 
 Cucumber executes executable specifications written in plain language and produces reports indicating whether the software behaves according to the specification or not.
@@ -23,8 +30,6 @@ Cucumber reference page: https://cucumber.io/
 ![Single Source of Truth](images for reference/single-source-of-truth-256x256.png)
     
 
-*Selenium is an umbrella project encapsulating a variety of tools and libraries enabling web browser automation. Selenium specifically provides infrastructure for the W3C WebDriver specification — a platform and language-neutral coding interface compatible with all major web browsers.
- 
- Selenium webdriver  reference page: http://docs.seleniumhq.org/projects/webdriver/
+
 
 
